@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0f7fa;
+        }
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Flight Price Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="airline">Airline:</label>
+            <select id="airline" name="airline" required>
+                <option value="vistara">Vistara</option>
+                <option value="air_india">Air India</option>
+                <option value="indigo">Indigo</option>
+                <option value="go_first">GO FIRST</option>
+                <option value="airasia">AirAsia</option>
+                <option value="spicejet">SpiceJet</option>
+            </select>
+
+            <label for="source_city">Source City:</label>
+            <select id="source_city" name="source_city" required>
+                <option value="delhi">Delhi</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="kolkata">Kolkata</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="chennai">Chennai</option>
+            </select>
+
+            <label for="departure_time">Departure Time:</label>
+            <select id="departure_time" name="departure_time" required>
+                <option value="evening">Evening</option>
+                <option value="early_morning">Early Morning</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="night">Night</option>
+                <option value="late_night">Late Night</option>
+            </select>
+
+            <label for="stops">Stops:</label>
+            <select id="stops" name="stops" required>
+                <option value="zero">Zero</option>
+                <option value="one">One</option>
+                <option value="two_or_more">Two or More</option>
+            </select>
+
+            <label for="arrival_time">Arrival Time:</label>
+            <select id="arrival_time" name="arrival_time" required>
+                <option value="night">Night</option>
+                <option value="morning">Morning</option>
+                <option value="early_morning">Early Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+                <option value="late_night">Late Night</option>
+            </select>
+
+            <label for="destination_city">Destination City:</label>
+            <select id="destination_city" name="destination_city" required>
+                <option value="mumbai">Mumbai</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="kolkata">Kolkata</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="chennai">Chennai</option>
+                <option value="delhi">Delhi</option>
+            </select>
+
+            <label for="class">Class:</label>
+            <select id="class" name="class" required>
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+            </select>
+
+            <label for="duration">Duration (in hours):</label>
+            <input type="number" step="0.1" id="duration" name="duration" required>
+
+            <label for="days_left">Days Left to Departure:</label>
+            <input type="number" id="days_left" name="days_left" required>
+
+            <input type="submit" value="Predict Price">
+        </form>
+    </div>
+</body>
+</html>
